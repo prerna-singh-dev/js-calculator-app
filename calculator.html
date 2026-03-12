@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <!-- Basic CSS-->
+    <style>
+      html,
+      body {
+        margin: 0;
+        box-sizing: border-box;
+        min-height: 100vh;
+        background: #1c1c1e;
+        font-family: system-ui, -apple-system, sans-serif;
+        color: #e5e5e7;
+      }
+      .container {
+        text-align: center;
+        padding: 2.5em 1em;
+      }
+      .container h1 {
+        font-weight: 600;
+        font-size: 1.4rem;
+        margin-bottom: 1em;
+      }
+      .mainBlock {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #3a3a3c;
+        background-color: #2c2c2e;
+        border-radius: 12px;
+        position: relative;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+      }
+      input {
+        padding: 8px;
+        display: block;
+        width: 95%;
+        margin: 1em 0px 1.5em;
+        border-radius: 8px;
+        border: 0;
+        background-color: #202020;
+        font-size: 20px;
+        text-align: right;
+        color: white;
+        outline: 2px solid #4f4f4f;
+        outline-offset: 5px;
+        transition: outline-color 0.25s ease, background-color 0.25s ease;
+      }
+      input:focus {
+        border: 0px;
+        outline-color: #6b6b6b;
+        background-color: #252525;
+      }
+      .btnBlock {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+      button {
+        border: 0px;
+        border-radius: 50%;
+        color: white;
+        font-size: 22px;
+        width: 48px;
+        height: 48px;
+        line-height: 40px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        background-color: #202020;
+        outline: 2px solid #4f4f4f;
+        outline-offset: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease, outline-color 0.2s ease;
+      }
+      button:hover {
+        background-color: #2a2a2a;
+        outline-color: #202020;
+      }
+      button:nth-child(4n) {
+        margin-right: 0px;
+      }
+      .operands {
+        background-color: orange;
+      }
+      .operands:hover {
+        background-color: #ffa726;
+        outline-color: #e65100;
+      }
+      .error {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: 0 auto;
+        bottom: 12px;
+        color: white;
+      }
+      #error {
+        display: none;
+        font-size: 12px;
+        background: #1c1c1e;
+        padding: 6px 12px;
+        border-radius: 8px;
+        color: #ff6b6b;
+        letter-spacing: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--Main Container -->
+    <div class="container">
+      <h1>Calculator App</h1>
+      <div class="mainBlock">
+        <div class="inputField">
+          <input
+            type="text"
+            name="inputVal"
+            id="inputVal"
+            value=""
+            aria-label="Calculator display"
+            aria-invalid="false"
+            aria-describedby="error"
+            readonly
+          />
+        </div>
+        <!-- Calculator Buttons-->
+        <div class="btnBlock">
+          <button
+            type="button"
+            class="operands clearInput"
+            aria-label="Clear input"
+          >
+            C
+          </button>
+          <button type="button" class="operands" aria-label="Percentage">
+            %
+          </button>
+          <button type="button" class="operands" aria-label="Divide">&divide;</button>
+          <button type="button" class="operands" aria-label="Multiply">
+            *
+          </button>
+          <button type="button" class="numBtn" aria-label="Seven">7</button>
+          <button type="button" class="numBtn" aria-label="Eight">8</button>
+          <button type="button" class="numBtn" aria-label="Nine">9</button>
+          <button type="button" class="operands" aria-label="Addition">
+            +
+          </button>
+          <button type="button" class="numBtn" aria-label="Four">4</button>
+          <button type="button" class="numBtn" aria-label="Five">5</button>
+          <button type="button" class="numBtn" aria-label="Six">6</button>
+          <button type="button" class="operands" aria-label="Subtract">
+            -
+          </button>
+          <button type="button" class="numBtn" aria-label="One">1</button>
+          <button type="button" class="numBtn" aria-label="Two">2</button>
+          <button type="button" class="numBtn" aria-label="Three">3</button>
+          <button type="button" class="operands" aria-label="Equal to">
+            =
+          </button>
+          <button type="button" class="numBtn" aria-label="Zero">0</button>
+        </div>
+
+        <!-- Error Block: live region so screen readers announce when error appears -->
+        <div class="error" aria-live="polite" aria-atomic="true">
+          <p id="error"></p>
+        </div>
+      </div>
+    </div>
+    <script src="calculator.js"></script>
+  </body>
+</html>
