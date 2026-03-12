@@ -27,7 +27,7 @@
       .mainBlock {
         width: 300px;
         margin: 0 auto;
-        padding: 20px;
+        padding: 34px;
         border: 1px solid #3a3a3c;
         background-color: #2c2c2e;
         border-radius: 12px;
@@ -45,7 +45,7 @@
         font-size: 20px;
         text-align: right;
         color: white;
-        outline: 2px solid #4f4f4f;
+        outline: 2px solid #202020;
         outline-offset: 5px;
         transition: outline-color 0.25s ease, background-color 0.25s ease;
       }
@@ -68,12 +68,12 @@
         font-size: 22px;
         width: 48px;
         height: 48px;
-        line-height: 40px;
+        line-height: 4px;
         margin-right: 20px;
         margin-bottom: 20px;
         text-align: center;
         background-color: #202020;
-        outline: 2px solid #4f4f4f;
+        outline: 2px solid #202020;
         outline-offset: 5px;
         cursor: pointer;
         transition: background-color 0.2s ease, outline-color 0.2s ease;
@@ -98,7 +98,7 @@
         right: 0;
         text-align: center;
         margin: 0 auto;
-        bottom: 12px;
+        bottom: 5px;
         color: white;
       }
       #error {
@@ -109,6 +109,7 @@
         border-radius: 8px;
         color: #ff6b6b;
         letter-spacing: 1px;
+        margin:0;
       }
     </style>
   </head>
@@ -138,32 +139,49 @@
           >
             C
           </button>
+          <button type="button" class="operands" aria-label="Opening Bracket">
+            (
+          </button>
+          <button type="button" class="operands" aria-label="Closing Bracket">
+            )
+          </button>
           <button type="button" class="operands" aria-label="Percentage">
             %
-          </button>
-          <button type="button" class="operands" aria-label="Divide">&divide;</button>
-          <button type="button" class="operands" aria-label="Multiply">
-            *
-          </button>
+          </button>          
+          
+
+        
           <button type="button" class="numBtn" aria-label="Seven">7</button>
           <button type="button" class="numBtn" aria-label="Eight">8</button>
           <button type="button" class="numBtn" aria-label="Nine">9</button>
-          <button type="button" class="operands" aria-label="Addition">
-            +
-          </button>
+          <button type="button" class="operands" aria-label="Divide">&divide;</button>
+          
           <button type="button" class="numBtn" aria-label="Four">4</button>
           <button type="button" class="numBtn" aria-label="Five">5</button>
           <button type="button" class="numBtn" aria-label="Six">6</button>
-          <button type="button" class="operands" aria-label="Subtract">
-            -
+          <button type="button" class="operands" aria-label="Multiply">
+            x
           </button>
+          
+         
           <button type="button" class="numBtn" aria-label="One">1</button>
           <button type="button" class="numBtn" aria-label="Two">2</button>
           <button type="button" class="numBtn" aria-label="Three">3</button>
+          <button type="button" class="operands" aria-label="Subtract">
+            -
+          </button>
+          <button type="button" class="operands" aria-label="Dot">
+            .
+          </button>
+          
+          <button type="button" class="numBtn" aria-label="Zero">0</button>
+          <button type="button" class="operands" aria-label="Addition">
+            +
+          </button>
+        
           <button type="button" class="operands" aria-label="Equal to">
             =
           </button>
-          <button type="button" class="numBtn" aria-label="Zero">0</button>
         </div>
 
         <!-- Error Block: live region so screen readers announce when error appears -->
